@@ -1,0 +1,26 @@
+86 IP 120.202.249.204 0.14547206165703275 2014-06-08 23:42:17.842 120.202.249.204 - - [28/Dec/2014:18:46:46 -0800] "GET /oldIndex.html HTTP/1.1" 200 3109 "http://redlug.com" "Mozilla/5.0 (Windows NT 6.1; rv:2.0b7pre) Gecko/20100921 Firefox/4.0b7pre" "redlug.com"
+
+
+Bot detection report
+each line consists of the following space delimited data: "A B C D E F"
+A: Line number at which the entry is found in log file
+B: Detection type (IP/AGENT)
+C: Matching text in the request
+D: Likelihood of being a bot
+E: most recent date seen
+F: Complete CLF log entry of the suspect request
+
+log file: ../example/example1.log
+date/time: 2015.01.17.033826
+
+total page count 11
+number of detections 1
+assuming all detections are actually bots, the percentage of bot traffic is 9.090909%
+
+of the detections, 100.000000% are not certain to be bots. 100.000000% were identified by IP address and 0.000000% by user agent
+if all uncertain detections are not bots, the percentage of bot traffic is 0.000000%
+
+weighting the percentage by the individual probabilities of each uncertain detection,
+the likelihood percentage of bot traffic is 1.322473%
+
+therefore, bot activity is from 0.000000% to 9.090909%, with a best estimate at 1.322473%
