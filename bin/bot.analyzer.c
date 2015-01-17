@@ -133,7 +133,7 @@ void test01()
                " \"%[^\"]\"" // user agent in quotations
                , ip_address, request, user_agent);
         // printf("%s\n",read_buffer);
-        printf("%s \n%s \n%s \n\n\n", ip_address,request,user_agent);
+        // printf("%s \n%s \n%s \n\n\n", ip_address,request,user_agent);
 
         // ** 1. check the request type **
         int bool_scanrequest = -1;
@@ -142,7 +142,6 @@ void test01()
         // we are interested in the url (second space delimited string)
         // however, we strip the url of any "?" modifier in case of.php extensions
         sscanf(request, "%*s %[^? ] %*s", requested_url);
-        //printf("%s\n", requested_url);
         size_t len_requested_url = strlen(requested_url);
         for (i=0; i < num_filetypes; i++)
         {
@@ -155,7 +154,7 @@ void test01()
                 //printf("i found the extension %s\n",filetypes[i]);
             }
         }
-
+        printf("%s\n", request);
         switch(bool_scanrequest)
         {
         case -1: // request is not a suspicious file type
