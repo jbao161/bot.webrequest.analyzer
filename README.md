@@ -1,6 +1,11 @@
 # bot.webrequest.analyzer
 A C program that checks a web CLF log file against known bot agents and suspect IP addresses to estimate the percentage of traffic due to bots to a site
 
+** Author:
+Jonathan Bao
+2015.01.17
+jbao161@gmail.com
+
 ** Usage:
 you must specify the location of a CLF log file
 in terminal or cmd, call 
