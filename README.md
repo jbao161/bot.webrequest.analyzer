@@ -1,11 +1,12 @@
 # bot.webrequest.analyzer
 checks a web CLF log file against known bot agents and suspect IP addresses to estimate the percentage of traffic due to bots to a site
 
-*** Usage:
+** Usage:
+you must specify the location of a CLF log file
 in terminal or cmd, call 
   bot.analyzer log_file
 
-optional flags:
+in addition, you may specify the program to use custom lists for which file types requests to monitor, known bot agents, and suspect IP addresses using any of these optional flags:
   -ftype filetype_file
   -agent useragent_file
   -ip ipaddress_file
@@ -13,13 +14,13 @@ optional flags:
 example:
   bot.analyzer example01.log -ftype request_types.txt -agent botlist.txt -ip ipbanlist.txt
   
-*** Requirements:
-  the ftype, agent, and ip files provided OR use your own
+** Requirements:
+  the ftype, agent, and ip files provided
   
-*** Output:
+** Output:
   generates a .report file listing the suspicious CLF log entries with a summary including the total page count, the number of suspicious requests, and the estimated percentage of traffic due to bots
   
-*** What it does:
+** What it does:
 Scans a log file line by line and checks the following in sequence:
  1. Is the url request of a suspicious file type?
   (.htm, .html, .shtml, .xhtml, .asp, .aspx, .php, .pl, .cgi, .cfm, .do, .jsp)
@@ -38,7 +39,7 @@ The number of bot detections divided by the total page count gives a high estima
 The number of certain detections divided by the total page count gives a low estimate of the percentage of bot traffic.
 The sum of the individual likelihoods of each detection divided by the total page count gives a best estimate of the percentage of bot traffic.
 
-*** Sample output:
+** Sample output:
 _ 49129 IP 37.58.100.142 1.0 2014-06-08 23:46:57.065 37.58.100.142 - - [27/Aug/2014:05:53:23 -0600] "GET /vendor/view.html?vendor_id=1821 HTTP/1.1" 301 178 "-" "Mozilla/5.0 (compatible; AhrefsBot/5.0; +http://ahrefs.com/robot/)"
 _ 
 _ 
