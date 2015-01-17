@@ -1,3 +1,8 @@
+// <author>Jonathan Bao</author>
+// <email>jbao161@gmail.com</email>
+// <date>2015.01.17</date>
+// <summary>checks a web CLF log file against known bot agents and suspect IP addresses to estimate the percentage of traffic due to bots to a site</summary>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -37,13 +42,13 @@ void test01()
 
     char read_buffer[4096];
 
-    char* log_filepath = "example3.log";
+    char* log_filepath = "../example/example1.log";
     FILE* log_file = fopen(log_filepath,"r");
-    char* filetype_filepath = "request_types";
+    char* filetype_filepath = "../lib/ftype";
     FILE* filetype_file;
-    char* agent_filepath = "user agents.html";
+    char* agent_filepath = "../lib/agent";
     FILE* agent_file;
-    char* ip_filepath = "distil_ip_report_ascii_delimited";
+    char* ip_filepath = "../lib/ip";
     FILE* ip_file;
 
     // current date/time in YYYY.MM.DD.TTTTTT format
@@ -56,7 +61,7 @@ void test01()
     //printf("%s\n",date_time);
 
     char foundbots_filepath [ FILENAME_MAX ];
-    snprintf(foundbots_filepath, FILENAME_MAX, "foundbots_%s.report", date_time);
+    snprintf(foundbots_filepath, FILENAME_MAX, "../out/%s.report", date_time);
     FILE* foundbots_file;
 
     char ip_address[50];
